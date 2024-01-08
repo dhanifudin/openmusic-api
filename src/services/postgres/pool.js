@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const { config } = require('../../config');
+const config = require('../../config');
 
 function createPool() {
   return new Pool({
@@ -13,4 +13,4 @@ function createPool() {
 
 const pool = createPool();
 
-module.exports = { pool };
+module.exports = pool;

@@ -1,6 +1,6 @@
 const { nanoid } = require('nanoid');
 const Boom = require('@hapi/boom');
-const { pool } = require('./pool');
+const pool = require('./pool');
 
 class SongsService {
   constructor() {
@@ -42,9 +42,9 @@ class SongsService {
       values: [id],
     };
 
-    const { rows } = await this.pool.query(query);
+    const { rows, rowCount } = await this.pool.query(query);
 
-    if (!rows.length) {
+    if (!rowCount) {
       throw Boom.notFound('Lagu tidak ditemukan');
     }
 

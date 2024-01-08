@@ -5,7 +5,7 @@ const routes = (handler, validator) => [
     handler: (request, h) => handler.postAlbumHandler(request, h),
     options: {
       validate: {
-        payload: validator,
+        payload: validator.albumValidator,
       },
     },
   },
@@ -20,7 +20,7 @@ const routes = (handler, validator) => [
     handler: (request) => handler.putAlbumByIdHandler(request),
     options: {
       validate: {
-        payload: validator,
+        payload: validator.albumValidator,
       },
     },
   },
