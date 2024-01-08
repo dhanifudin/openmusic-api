@@ -10,4 +10,4 @@ const songValidator = Joi.object({
   albumId: Joi.string(),
 });
 
-module.exports = songValidator;
+module.exports = { songValidator };

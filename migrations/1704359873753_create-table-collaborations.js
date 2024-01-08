@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
-
-const table = 'albums';
+const table = 'collaborations';
 
 exports.shorthands = undefined;
 
@@ -10,13 +9,17 @@ exports.up = (pgm) => {
       type: 'VARCHAR(50)',
       primaryKey: true,
     },
-    name: {
+    playlist_id: {
       type: 'VARCHAR(50)',
       notNull: true,
+      references: 'playlists(id)',
+      onDelete: 'CASCADE',
     },
-    year: {
-      type: 'INT',
+    user_id: {
+      type: 'VARCHAR(50)',
       notNull: true,
+      references: 'users(id)',
+      onDelete: 'CASCADE',
     },
   });
 };
