@@ -5,7 +5,7 @@ const routes = (handler, validator) => [
     handler: (request, h) => handler.postSongHandler(request, h),
     options: {
       validate: {
-        payload: validator,
+        payload: validator.songValidator,
       },
     },
   },
@@ -25,7 +25,7 @@ const routes = (handler, validator) => [
     handler: (request, h) => handler.putSongByIdHandler(request, h),
     options: {
       validate: {
-        payload: validator,
+        payload: validator.songValidator,
       },
     },
   },

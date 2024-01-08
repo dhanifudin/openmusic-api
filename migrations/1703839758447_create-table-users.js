@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-const table = 'albums';
+const table = 'users';
 
 exports.shorthands = undefined;
 
@@ -10,12 +10,16 @@ exports.up = (pgm) => {
       type: 'VARCHAR(50)',
       primaryKey: true,
     },
-    name: {
+    username: {
       type: 'VARCHAR(50)',
       notNull: true,
     },
-    year: {
-      type: 'INT',
+    password: {
+      type: 'TEXT',
+      notNull: true,
+    },
+    fullname: {
+      type: 'TEXT',
       notNull: true,
     },
   });

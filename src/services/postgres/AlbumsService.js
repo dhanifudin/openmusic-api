@@ -1,6 +1,6 @@
 const { nanoid } = require('nanoid');
 const Boom = require('@hapi/boom');
-const { pool } = require('./pool');
+const pool = require('./pool');
 
 class AlbumsService {
   constructor() {

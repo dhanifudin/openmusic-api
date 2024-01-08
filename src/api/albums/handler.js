@@ -7,16 +7,13 @@ class AlbumsHandler {
     const { name, year } = request.payload;
     const albumId = await this.service.addAlbum({ name, year });
 
-    const response = h.response({
+    return h.response({
       status: 'success',
       message: 'Album berhasil ditambahkan',
       data: {
         albumId,
       },
-    });
-
-    response.code(201);
-    return response;
+    }).code(201);
   }
 
   async getAlbumByIdHandler(request) {

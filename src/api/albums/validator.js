@@ -5,4 +5,4 @@ const albumValidator = Joi.object({
   year: Joi.number().required(),
 });
 
-module.exports = albumValidator;
+module.exports = { albumValidator };
